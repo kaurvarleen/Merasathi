@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-heroBG : #882D2A;
+  --color-mainBG : #FDF6F2;
+  --color-darkBrown : #2C1A1A;
+  --color-reddishBrown:  #5A2B26;
+}
+ 
+body {
+  background-color: var(--color-mainBG);
+  min-height: 100vh;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
