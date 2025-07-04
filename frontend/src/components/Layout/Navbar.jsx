@@ -1,15 +1,40 @@
-import '../../Stylesheet/Navbar.css';
+import "../../Stylesheet/Navbar.css";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const menuItems = [
+    {
+      label: "HOME",
+      path: "/",
+    },
+    {
+      label: "FIND MY MATCH",
+      path: "/findmatch",
+    },
+    {
+      label: "MY MATCHES",
+      path: "/mymatches",
+    },
+    {
+      label: "PROFILE",
+      path: "/profile",
+    },
+  ];
+
   return (
     <nav className="navbar">
-      <div className="logo">MERA SATHI</div>
+      <div onClick={() => navigate("/")} className="logo">
+        MERA SATHI
+      </div>
+
       <ul className="nav-links">
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#about">FIND-MATCH</a></li>
-        <li><a href="#contact">MY-MATCH</a></li>
-        <li><a href="#search">PROFILE</a></li>
-        
+        {menuItems.map((item, index) => (
+          <li onClick={() => navigate(item.path)} key={index}>
+            {item.label}
+          </li>
+        ))}
       </ul>
     </nav>
   );
